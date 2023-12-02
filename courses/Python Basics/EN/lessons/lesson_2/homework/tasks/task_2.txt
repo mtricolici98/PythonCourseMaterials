@@ -1,0 +1,3 @@
+## Ex 2
+
+Complete the code below, such that the result becomes 18.

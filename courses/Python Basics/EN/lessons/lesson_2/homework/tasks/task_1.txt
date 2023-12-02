@@ -1,0 +1,2 @@
+## Ex 1
+Complete the code below, so that the user will have to input his name in the console, and a welcome message will be displayed.

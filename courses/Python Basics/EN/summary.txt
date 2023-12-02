@@ -1,0 +1,1 @@
+Fundamentals of programming with Python, what is python, how we store data, basic control flow and basic data processing.

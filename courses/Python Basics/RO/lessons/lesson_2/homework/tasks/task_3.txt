@@ -1,0 +1,12 @@
+## Ex 3
+
+Create a program that will ask the following info from the console:
+
+* Email
+* Username
+
+And will show the data in the following format:
+
+`Email for user marius was sent successfully to address mariustricolici@mail.com`
+
+If the user inputs the email: `mariustricolici@mail.com` and the username: `marius`.

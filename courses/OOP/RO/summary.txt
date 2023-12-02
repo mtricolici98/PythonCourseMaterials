@@ -1,0 +1,1 @@
+Utilizarea obiectelor in programare pentru procesarea, reprezentarea si stocarea datelor.

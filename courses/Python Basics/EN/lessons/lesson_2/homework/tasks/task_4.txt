@@ -1,0 +1,6 @@
+## Ex 4
+
+Fix the errors in the program below.
+
+> The program should display addition result.
+

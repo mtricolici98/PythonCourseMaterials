@@ -1,0 +1,1 @@
+Basics of functional programming, using functions to structure your code. Creating of programs with multiple modules, using python built-in modules.

@@ -1,0 +1,1 @@
+Bazele programarii functionale, utilizarea functiilor pentru indeplinirea sarcinilor, structurarea codului in functii, rularea programelor cu mai multe module, utilizarea modulelor python.

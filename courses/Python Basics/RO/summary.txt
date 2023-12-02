@@ -1,0 +1,1 @@
+Fundamentele programării cu Python, ce este Python, modul în care stocăm date, fluxul de control de bază și procesarea de date elementară.

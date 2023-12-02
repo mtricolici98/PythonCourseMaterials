@@ -1,0 +1,9 @@
+Instructions
+
+There are 3 different types of exercises
+
+* If you find code that contains `___`, you need to replace `___` with your own code.
+* If the exercise does not contain code, you need to write all the code yourself.
+* If an exercise has errors, you need to make the program work correctly by fixing the errors.
+
+> Errors are easy to notice: The IDE will underline them with red.

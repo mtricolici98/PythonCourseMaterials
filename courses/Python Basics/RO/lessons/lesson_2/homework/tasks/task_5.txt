@@ -1,0 +1,9 @@
+## Ex  5.
+
+Create a constant called `CONST_MATEMATICA` with the value 5
+
+Create the variable `current_nr` with the value 1
+
+Show the values 15, 16, 20, 24 only using `CONST_MATEMATICA` and `current_nr`.
+
+> You are not allowed to change any of the values
