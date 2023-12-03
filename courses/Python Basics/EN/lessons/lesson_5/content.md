@@ -46,12 +46,12 @@ print(my_char_list)  # ['H', 'e', 'l', 'l', 'o']
 > Remember from the string lesson, that a string is just a `list` of characters. Thus, it is easy to express it as a
 > list.
 
-### We've seen this before...
+## We've seen this before...
 
 When it comes to accessing specific values, or doing slices, strings work exactly the same way strings did, with one
 interesting caveat, lists can be changed internally.
 
-### Accessing values
+## Accessing values
 
 Values in a list can be accessed using their index, which represents their position in the list. Similar to strings, the
 index starts at 0.
@@ -73,9 +73,10 @@ print(my_list[-2:])  # ['two', 'three']
 print(my_list[0:2])  # ['one', 'two']
 ```
 
-### Lists are mutable
+## Lists are mutable
 
-Lists are mutable, compared to strings, which means you can change their elements or add new elements without creating a new list instance.
+Lists are mutable, compared to strings, which means you can change their elements or add new elements without creating a
+new list instance.
 
 To change an element in a list, assign a new value to the element at a specific index.
 
@@ -87,7 +88,9 @@ my_list[1] = 'two'
 print(my_list)  # [1, 'two', 3]
 ```
 
-### Adding elements to a list
+## Adding elements to a list
+
+Because lists are **mutable**, we can modify the contents of an existing list, without needing to create a new one.
 
 There are two main ways to add elements to a list:
 
@@ -111,9 +114,57 @@ print(my_list)  # ['First item', 'Second Item']
 
 List concatenation is also possible using the dedicated function **.extend()**.
 
-### Removing items from a list
+## Note on mutability
 
-#### Using **remove()**
+There is one important thing to note about mutability as a concept.
+
+With immutable data types changing one reference will not affect the other reference:
+
+```python
+a = b = "Hello"
+b = b.upper()
+print(a)  # Hello
+print(b)  # HELLO
+```
+
+> In the code above, changing B did not afect A
+
+In the code above, `a` and `b` have the same value, but may not be the same reference. Changing `b` will never
+affect `a`, and vice-versa.
+
+```python
+a = b = [1, 2]  # b and a are both references to our list
+a.append(3)
+print(a)  # [1, 2, 3]
+print(b)  # [1, 2, 3]
+b.remove(2)
+print(a)  # [1, 3]
+print(b)  # [1, 3]
+```
+
+> In the code above, changing B also affects A
+
+The reason for this unusual behaviour, is that python works with **Mutable** and **Imutable** data types differently.
+
+### Immutable
+
+Immutable data types are `str`, `int`, `float`, `bool`, and `tuple` _(will be discussed later)_.
+
+When an immutable **value** is referenced by another **variable**, Python will create a **copy**. This means that the
+second **variable** will be referring to a **new** **value**, that is the exact copy of the first.
+
+### Mutable
+
+Immutable data types are far more common in python, and they include `list`, `dict`, `set`, most of the `objects`,
+etc... _(will be discussed later)_
+
+When a new (variable) reference to a mutable value is created, python creates a new `link` to the same value, and your
+new variable still looks at the same piece of memory in the program. This means that the same **value** can be accessed
+using either **variable**.
+
+## Removing items from a list
+
+### Using **remove()**
 
 You can remove an item from a list using the **.remove()** function. This method takes the value of the item you want to
 remove as an argument.
@@ -133,7 +184,7 @@ my_list.remove(2)
 print(my_list)  # [1, 2, 3]
 ```
 
-#### Using **del**
+### Using **del**
 
 The **del** keyword allows you to remove an item from a list using its index.
 
@@ -151,7 +202,7 @@ del my_list[1:3]
 print(my_list)  # [1, 4, 5]
 ```
 
-#### Using **pop()**
+### Using **pop()**
 
 The **.pop()** function removes an item from a list at a specific index and returns the value of the removed item. If no
 index is specified, it removes the last item in the list.
@@ -167,18 +218,18 @@ print(my_list)  # [1]
 print(last_item)  # 3
 ```
 
-### List methods and functions
+## List methods and functions
 
 Lists have several built-in methods and functions that allow you to manipulate and work with them:
 
 - **len()**: Returns the number of items in a list.
-- **count()**: Returns the number of occurrences of a specific item in a list.
-- **index()**: Returns the index of the first occurrence of a specific item in a list.
-- **sort()**: Sorts the items in a list in ascending order.
-- **reverse()**: Reverses the order of items in a list.
-- **clear()**: Removes all items from a list.
-- **copy()**: Creates a shallow copy of a list.
-- **extend()**: Appends all items from another list to the end of the current list.
+- **.count()**: Returns the number of occurrences of a specific item in a list.
+- **.index()**: Returns the index of the first occurrence of a specific item in a list.
+- **.sort()**: Sorts the items in a list in ascending order.
+- **.reverse()**: Reverses the order of items in a list.
+- **.clear()**: Removes all items from a list.
+- **.copy()**: Creates a shallow copy of a list.
+- **.extend()**: Appends all items from another list to the end of the current list.
 
 These methods can be called using the dot notation on a list object.
 
@@ -212,8 +263,8 @@ print(new_list)  # [1, 2, 3, 4, 5, 6]
 Another one of the main pillars of programming is iteration. **Iteration** is the process of doing the same thing
 multiple times with different values.
 
-In Python, one way to achieve iteration is through the use of **for** loops. For loops are done using the **for ...
-in ...** blocks in Python. You can iterate through different collections such as lists and tuples.
+In Python, one way to achieve iteration is through the use of **for** loops. For loops are done using
+the `for item in sequence:` blocks in Python. You can iterate through different sequences such as lists and tuples.
 
 Here's an example that demonstrates iterating over a list and printing each element:
 
@@ -227,13 +278,33 @@ for element in my_list:
 # Third
 ```
 
-You can iterate through tuples in the same way as any other collection:
+Iteration allows us to process each element of a given sequence one by one.
+
+The block of code inside the iteration, will be repeated for as many times as there are items in the sequence.
+
+If the list has `3` items, the block of code **will repeat** `3` times. If the list has `100` items, then the block will
+execute `100` times.
+
+The code block inside the iteration can be as long or as short as we want.
 
 ```python
-data = (52, 29, 39)
-for el in data:
-    print(el)
+students = ['Marius', 'Alex', 'Ion']
+for student in students:
+    grade = int(input(f'What grade does {student} have ?'))
+    if grade < 5:
+        print(f'{student} did not pass the exam')
+    else:
+        print(f'{student} passed the exam.')
 ```
+
+**Important to note**: the `student` variable is a temporary variable, each time the iteration executes (the block of
+code gets executed) the `student` variable will have a different value. First `Marius` then `Alex`, etc...
+
+The name of the `temp variable` **does not matter!**
+
+> Try to play around with the example above, make your own code inside the loop, add items, remove items from the list.
+
+### Another example
 
 Let's consider a more practical example. Suppose we want to calculate the sum of a list of numbers:
 
@@ -247,16 +318,21 @@ print(numbers_sum)
 
 In the above example, we iterate through the list of numbers and add each number to the `numbers_sum` variable.
 
+In the example above, 4th line of code gets executed **five (5)** times. Every time the line gets executed, the
+**value** of the `number` **variable** will change.
+
 ## Range
 
-Sometimes, you may want to iterate a certain number of times without having a specific list to iterate over. This is
-where the **range()** function comes in handy.
+Sometimes, you want to execute a block of code a fixed number of times, without having an existing list. You don't have
+to create a list just for that.
+
+This is where the **range()** function comes in handy.
 
 The **range()** function creates a sequence of numbers based on the parameters supplied to it. Here's an example that
 prints numbers from 0 to 4:
 
 ```python
-for a in range(5):
+for a in range(5):  # Will generate 5 numbers
     print(a)
 # Output:
 # 0
@@ -266,7 +342,7 @@ for a in range(5):
 # 4
 ```
 
-The **range()** function generates values one after another.
+The **range()** function generates values sequentially.
 
 You can customize the **range()** function in several ways. For instance, you can specify the starting point and the end
 point of the range:
@@ -322,10 +398,8 @@ example:
 
 ```python
 my_list = [6, 9, 4, 2, 0]
-for a in range(len(my_list)):  # len(my_list) == 5
-    print(f'Item at index {a} is {
-
-my_list[a]}')
+for a in range(len(my_list)):  # len(my_list) is 5
+    print(f'Item at index {a} is {my_list[a]}')
 # Output:
 # Item at index 0 is 6
 # Item at index 1 is 9
