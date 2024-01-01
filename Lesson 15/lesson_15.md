@@ -82,7 +82,7 @@ The math library in Python provides a wide range of mathematical functions and c
 - Arithmetic functions: ceil(), floor(), fabs(), etc.
 
 Example:
-```
+```python
 import math
 
 # Calculate the sine of an angle
@@ -92,9 +92,7 @@ print(sin_value)  # Output: 0.7071067811865476
 
 # Calculate the logarithm of a number
 number = 10
-log_value
-
- = math.log(number, 10)
+log_value = math.log(number, 10)
 print(log_value)  # Output: 1.0
 
 # Round up a floating-point number
@@ -111,7 +109,7 @@ When working with financial or precise decimal-based calculations, the decimal l
 Using the decimal library, you can specify the precision, rounding methods, and other settings for your decimal calculations. This library ensures accurate results for applications where precision is crucial, such as financial transactions or scientific computations.
 
 Example:
-```
+```python
 import decimal
 
 # Set the decimal precision

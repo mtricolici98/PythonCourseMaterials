@@ -1,0 +1,5 @@
+This exercise focuses on your ability to structure/restructure a application into multiple modules and utilizing the structure to benefit redability.
+
+Your solution must be a `.zip` file as an attachment, containing only `.py` files.
+
+Inside the textbox, please include a comment detailing the changes you have made, and why you have made them.
