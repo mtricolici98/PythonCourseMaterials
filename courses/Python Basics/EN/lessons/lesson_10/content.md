@@ -71,9 +71,7 @@ print(my_dict['my_key'])  # My value
 To add or change values in a dictionary, you can assign a value to a new key to add a new key-value pair, or you can assign a value to an existing key to update its value. If a key does not exist during assignment, it will be created.
 
 ```python
-my_dict = {'my_key':
-
- 'My value'}
+my_dict = {'my_key': 'My value'}
 my_dict['my_other_key'] = 'My other value'
 print(my_dict['my_other_key'])  # My other value
 ```
