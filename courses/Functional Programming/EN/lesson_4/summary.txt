@@ -1,0 +1,1 @@
+Interfacing between computer storage and python memory, efficiently structuring data.
