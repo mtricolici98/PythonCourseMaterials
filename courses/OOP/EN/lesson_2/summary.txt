@@ -1,0 +1,1 @@
+Extending the functionality of existing classes and improving usability while maintaining encapsulation.

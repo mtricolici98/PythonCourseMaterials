@@ -1,0 +1,8 @@
+The tasks below should get you used to storing your data and behaviour in objects.
+
+
+### How to present your homework.
+
+Present your solutions in a single file.
+
+Each file should contain the class, and an `if __name__ == '__main__'` block that tests the functionality of the class.
