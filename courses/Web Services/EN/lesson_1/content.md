@@ -336,7 +336,7 @@ The response body is optional because it may often be the case that there is no 
 For example, if I send a request to save a new user, I can either return the new user in the requests' body, or it can
 just return an empty response with status 200, indicating that the request was a success.
 
-## HTTP Status codes
+### HTTP Status codes
 
 HTTP Status codes have a wide variety of meanings. Most common of them are found below.
 
@@ -354,9 +354,11 @@ HTTP Status codes have a wide variety of meanings. Most common of them are found
 | 404         | Not Found          | Resource could not be found                                                                                                     |
 | 405         | Method not allowed | Server doesn't allow that request method for the resource. (Using GET instead of POST for a resource for example                | 
 
-## Making requests in Python
+## Making a Web Client in Python
 
-In order to make requests in Python, we need to use a special library: requests.
+In order to be a web-client, we need to be able to make requests, and process responses.
+
+To do that in Python, we need to use a special library: requests.
 
 Use `pip install requests` - to install it.
 
